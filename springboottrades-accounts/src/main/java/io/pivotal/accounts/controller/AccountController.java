@@ -34,8 +34,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RestController
 public class AccountController {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(AccountController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AccountController.class);
 
 	/**
 	 * The service to delegate calls to.
@@ -50,12 +49,12 @@ public class AccountController {
 	 * @return The account object if found.
 	 */
 	@RequestMapping(value = "/account/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Account> find(@PathVariable("id") final Integer id) {
+	public ResponseEntity<Account> find(@PathVariable("id") final int id) {
 
 		logger.info("AccountController.find: id=" + id);
 
 		Account accountResponse = this.service.findAccount(id);
-		return new ResponseEntity<Account>(accountResponse,
+		return new ResponseEntity<>(accountResponse,
 				getNoCacheHeaders(), HttpStatus.OK);
 
 	}

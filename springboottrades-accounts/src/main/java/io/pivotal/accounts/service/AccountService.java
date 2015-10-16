@@ -25,8 +25,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountService {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(AccountService.class);
+	private static final Logger logger = LoggerFactory.getLogger(AccountService.class);
 
 	/**
 	 * The accounts repository.
@@ -85,17 +84,17 @@ public class AccountService {
 	 * @return The account object if found or AuthenticationException otherwise.
 	 */
 	@Cacheable(value = "authorizationCache")
-	public Account findAccountprofileByAuthtoken(String token) {
-		logger.debug("AccountService.findAccountprofileByAuthtoken looking for authToken: " + token);
+	public Account findAccountProfileByAuthToken(String token) {
+		logger.debug("AccountService.findAccountProfileByAuthToken looking for authToken: " + token);
 		if (token == null) {
 			//TODO: no point in checking database. throw exception here.
-			logger.error("AccountService.findAccountprofileByAuthtoken(): token is null");
+			logger.error("AccountService.findAccountProfileByAuthToken(): token is null");
 			throw new AuthenticationException("Authorization Token is null");
 		}
 		Account accountProfile = null;
 		accountProfile = accounts.findByAuthtoken(token);
 		if (accountProfile == null) {
-			logger.error("AccountService.findAccountprofileByAuthtoken(): accountProfile is null for token="
+			logger.error("AccountService.findAccountProfileByAuthToken(): accountProfile is null for token="
 					+ token);
 			throw new AuthenticationException("Authorization Token not found");
 		}

@@ -14,16 +14,24 @@ import java.util.Set;
 public class Holding {
 
 	private Integer id;
+
 	private String symbol;
+
 	private Integer quantity = 0;
-	private BigDecimal purchaseValue = BigDecimal.ZERO;
-	private BigDecimal sellValue = BigDecimal.ZERO;
-	private Set<Order> orders = new HashSet<>();
-	private BigDecimal currentValue = BigDecimal.ZERO;
-	public Integer getId() {
+
+    private BigDecimal purchaseValue = BigDecimal.ZERO;
+
+    private BigDecimal sellValue = BigDecimal.ZERO;
+
+    private Set<Order> orders = new HashSet<>();
+
+    private BigDecimal currentValue = BigDecimal.ZERO;
+
+    public Integer getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+
+    public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getSymbol() {

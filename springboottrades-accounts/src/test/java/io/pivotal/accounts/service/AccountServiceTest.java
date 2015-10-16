@@ -83,7 +83,7 @@ public class AccountServiceTest {
 	public void doFindAccountByAuthToken() {
 		when(repo.findByAuthtoken(ServiceTestConfiguration.AUTH_TOKEN)).thenReturn(ServiceTestConfiguration.account());
 		
-		assertEquals(service.findAccountprofileByAuthtoken(ServiceTestConfiguration.AUTH_TOKEN).toString(),ServiceTestConfiguration.account().toString());
+		assertEquals(service.findAccountProfileByAuthToken(ServiceTestConfiguration.AUTH_TOKEN).toString(),ServiceTestConfiguration.account().toString());
 	}
 	/**
 	 * test retrieval of account with no valid authtoken.
@@ -92,7 +92,7 @@ public class AccountServiceTest {
 	public void doFindNullAccountByAuthToken() {
 		when(repo.findByAuthtoken("faef8649-280d-4ba4-bdf6-574e758a04a8")).thenReturn(null);
 		
-		service.findAccountprofileByAuthtoken("faef8649-280d-4ba4-bdf6-574e758a04a8");
+		service.findAccountProfileByAuthToken("faef8649-280d-4ba4-bdf6-574e758a04a8");
 	}
 	/**
 	 * test retrieval of account by authtoken with null.
@@ -100,7 +100,7 @@ public class AccountServiceTest {
 	@Test(expected=AuthenticationException.class)
 	public void doFindAccountByAuthTokenNull() {
 		
-		service.findAccountprofileByAuthtoken(null);
+		service.findAccountProfileByAuthToken(null);
 	}
 	/**
 	 * test saving of account.
