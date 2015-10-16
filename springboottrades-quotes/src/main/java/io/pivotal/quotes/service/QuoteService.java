@@ -29,8 +29,7 @@ public class QuoteService {
 	private static final String QUOTE_URL = "http://dev.markitondemand.com/Api/v2/Quote/json?symbol={symbol}";
 	private static final String COMPANY_URL = "http://dev.markitondemand.com/Api/v2/Lookup/json?input={name}"; 
 	
-	private static final Logger logger = LoggerFactory
-			.getLogger(QuoteService.class);
+	private static final Logger logger = LoggerFactory.getLogger(QuoteService.class);
 	
 	private RestTemplate restTemplate = new RestTemplate();
 	/**
